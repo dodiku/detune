@@ -42,6 +42,9 @@ video {
 
 .phone {
   text-align: center;
+  position: inherit;
+  width: 322.55px;
+  margin: auto;
 }
 
 .iphonex {
