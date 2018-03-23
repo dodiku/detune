@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: white;
+  /* background: linear-gradient(to bottom right, purple, pink); */
+  background: linear-gradient(-31deg, #006BFF 0%, #4E2F76 24%, #CA205A 55%, pink);
+  padding-bottom: 120px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  padding-top: 120px;
+}
+
+img {
+    display: inline-block;
+    text-align: center;
+}
+
+a {
+  color: white;
+}
+
+video {
+  position: inherit;
+  height: 688px;
+  z-index: -1;
+  /* left: 45%; */
+  border-radius: 44px;
+  /* top: 242px; */
+  padding-top: 20px;
+  padding-left: 6px;
+}
+
+.container {
+  text-align: center;
+  width: 520px;
+  margin: auto;
+}
+
+.phone {
+  text-align: center;
+}
+
+.iphonex {
+  height: 720px;
+  position: absolute;
+  width: 332px;
+}
+
+.store {
+  height: 64px;
+}
+
+.description {
+  margin-top: 48px;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+.press {
+  text-align: left;
+  line-height: 26px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.publisher {
+  font-weight: bold;
+}
+
+.quote {
+  font-style: italic;
+}
+
+
+.github{
+  text-align: left;
+  margin-top: 48px;
+  border: 1px solid white;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  line-height: 26px;
+}
+
+.github:hover{
+  background: blue;
+}
+
+.github_img {
+  width: 60px;
+  display: inline-block;
+}
+
+.contributors {
+  text-align: left;
+  margin-top: 48px;
+  font-weight: bold;
+}
+
+.developer {
+  display: inline-block;
+  margin-left: 48px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.developer_photo {
+  height: 86px;
+  border-radius: 80px;
+  margin-top: 24px;
+}
+
+.mute {
+  border: 1px white solid;
+  width: 100px;
+  margin: auto;
+  cursor: pointer;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.3);
+}
+
+.mute:hover {
+  background: blue;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>detune :: music with your face on iOS</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="icon" type="image/png" href="media/logo.png">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1>detune</h1>
+
+      <div class="phone">
+        <div class="mute" onclick="mute()" id="mute">
+          🔊 play sound
+        </div>
+        <img class="iphonex" src="media/iphonex.svg" alt="iphonex">
+        <video autoplay="autoplay" loop="loop" id="video" muted>
+          <source src="media/detune_video.mp4" type="video/mp4">
+        </video>
+
+        <div class="">
+
+        </div>
+
+
+          <br>
+          <a href="#" target="_blank"><img class="store" src="media/AppStore.svg" alt="go to AppStore"></a>
+
+      </div>
+
+      <p class="description"><span style="font-weight:bold;">detune</span> allows you to play music using your face!</p>
+
+      <div class="press">
+        <p>
+          <span class="publisher">NameOfPublisher</span>
+          <br>
+          <span class="quote">“quote quote quote quote quote  quote  quote  quote  quote  quote quote quote quote ….”</span>
+          <br>
+          <a href="#" target="_blank">LinkToArticle</a>
+        </p>
+      </div>
+
+      <div class="press">
+        <p>
+          <span class="publisher">NameOfPublisher</span>
+          <br>
+          <span class="quote">“quote quote quote quote quote  quote  quote  quote  quote  quote quote quote quote ….”</span>
+          <br>
+          <a href="#" target="_blank">LinkToArticle</a>
+        </p>
+      </div>
+
+      <div class="press">
+        <p>
+          <span class="publisher">NameOfPublisher</span>
+          <br>
+          <span class="quote">“quote quote quote quote quote  quote  quote  quote  quote  quote quote quote quote ….”</span>
+          <br>
+          <a href="#" target="_blank">LinkToArticle</a>
+        </p>
+      </div>
+
+
+      <div>
+        <span style="font-style:italic; font-size:13px;">detune is currently supported on iPhoneX (or any other device with a TrueDepth camera)</span>
+      </div>
+
+      <a href="#" style="text-decoration: none;">
+
+        <div class="github">
+            <div class="" style="display:inline-block;">
+              <img class="github_img" src="media/github.svg" alt="github logo">
+            </div>
+
+            <div class="" style="display: inline-block; margin-left: 12px; vertical-align: super;">
+              detune is open-source!
+              <br>
+              Use it and build amazing stuff!
+            </div>
+        </div>
+
+      </a>
+
+      <div class="contributors">
+        This project was developed by:
+        <br>
+        <div class="developer">
+          <img class="developer_photo" src="media/drorayalon.jpg" alt="Dror Ayalon">
+          <a href="https://www.drorayalon.com" target="_blank"><div class="">Dror Ayalon</div></a>
+          <a href="https://twitter.com/drorayalon" target="_blank"><div class="">@drorayalon</div></a>
+        </div>
+
+
+        <div class="developer">
+          <img class="developer_photo" src="media/orfleisher.jpg" alt="Of Fleisher">
+          <a href="http://www.orfleisher.com" target="_blank"><div class="">Or Fleisher</div></a>
+          <a href="https://twitter.com/juniorxsound" target="_blank"><div class="">@JuniorXSound</div></a>
+        </div>
+      </div>
+
+      <div style="text-align:left;margin-top: 48px;">
+        Contributors:
+        <br>
+        <br>
+        <a href="https://www.linkedin.com/in/djordje-jovic-7b3b0a145/" target="_blank"><div class="">Djordje Jovic</div></a>
+
+      </div>
+      <div class="developer">
+
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      var vid = document.getElementById("video");
+      var muteButton = document.getElementById("mute");
+
+      function mute(){
+
+          if ((vid.muted === false) || (vid.muted === undefined)){
+
+            vid.muted = true;
+            muteButton.innerHTML = '🔊 play sound'
+
+          } else {
+
+            vid.muted = false;
+            muteButton.innerHTML = '🔇 stop sound'
+          }
+      }
+    </script>
+
+  </body>
+</html>
