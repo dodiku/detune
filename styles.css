@@ -25,13 +25,11 @@ a {
 
 video {
   position: inherit;
-  height: 688px;
+  height: 680px;
   z-index: -1;
-  /* left: 45%; */
-  border-radius: 44px;
-  /* top: 242px; */
-  padding-top: 20px;
-  padding-left: 6px;
+  border-radius: 50px;
+  padding-top: 23px;
+  padding-left: 12px;
 }
 
 .container {
