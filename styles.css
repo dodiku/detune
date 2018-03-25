@@ -120,7 +120,6 @@ video {
 }
 
 .mute {
-  border: 1px rgba(255,255,255,0.5) solid;
   width: 100px;
   margin: auto;
   cursor: pointer;
@@ -132,5 +131,4 @@ video {
 
 .mute:hover {
   background: blue;
-  border: 1px rgba(255,255,255,1) solid;
 }
