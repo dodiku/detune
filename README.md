@@ -22,7 +22,7 @@ $ pods install
 Don't use the regular .xcodeproj file, because the CocoaPods won't be imported.
 
 #### ARFaceAnchor
-We mapped all available face anchors that are available on ARKit. You can find this list on the Xcode project:
+We mapped [all available face anchors](https://developer.apple.com/documentation/arkit/arfaceanchor) on ARKit. You can find this list on the Xcode project:
 ```
     "browDown_L" = "0.3815315";
     "browDown_R" = "0.2073889";
