@@ -419,7 +419,7 @@
 					"\"PRTween\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ordror.detune;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ordror.detuneapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Face_Music/bridge.h;
 				SWIFT_VERSION = 4.0;
@@ -449,7 +449,7 @@
 					"\"PRTween\"",
 					"-lstdc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ordror.detune;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ordror.detuneapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Face_Music/bridge.h;
 				SWIFT_VERSION = 4.0;
