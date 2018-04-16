@@ -142,6 +142,7 @@
 				56FAFD6E1FCF389700C35BE9 /* Frameworks */,
 				56FAFD6F1FCF389700C35BE9 /* Resources */,
 				27721E48D4FB1E84779D2DEA /* [CP] Embed Pods Frameworks */,
+				6996BC8FEFA13C64652E118F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,7 +161,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "Or Fleisher";
+				ORGANIZATIONNAME = "Dror Ayalon";
 				TargetAttributes = {
 					56FAFD701FCF389700C35BE9 = {
 						CreatedOnToolsVersion = 9.2;
@@ -236,6 +237,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Face_Music/Pods-Face_Music-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6996BC8FEFA13C64652E118F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Face_Music/Pods-Face_Music-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
