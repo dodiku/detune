@@ -19,6 +19,7 @@
 		9F24040520644CD200DF45CE /* RecordButtonKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24040320644CD200DF45CE /* RecordButtonKit.swift */; };
 		9F24040720644CE400DF45CE /* MessageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24040620644CE400DF45CE /* MessageInfoView.swift */; };
 		9F2404112064511C00DF45CE /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2404102064511C00DF45CE /* MessageView.swift */; };
+		9FF3F7C420836109006A8CE9 /* RecordingSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3F7C320836109006A8CE9 /* RecordingSessionView.swift */; };
 		E031DFE05B55FF30CB755EA0 /* Pods_Face_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8195BFE9AF8C2F1FA43956C6 /* Pods_Face_Music.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		9F24040620644CE400DF45CE /* MessageInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageInfoView.swift; sourceTree = "<group>"; };
 		9F2404102064511C00DF45CE /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9F61F7EE205D4CFF0038927F /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		9FF3F7C320836109006A8CE9 /* RecordingSessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSessionView.swift; sourceTree = "<group>"; };
 		F859108C21EEEDADD82E5867 /* Pods-Face_Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Face_Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Face_Music/Pods-Face_Music.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 				9F61F7F0205D4DA90038927F /* Record button */,
 				9F24040620644CE400DF45CE /* MessageInfoView.swift */,
 				9F2404102064511C00DF45CE /* MessageView.swift */,
+				9FF3F7C320836109006A8CE9 /* RecordingSessionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -139,7 +142,6 @@
 				56FAFD6E1FCF389700C35BE9 /* Frameworks */,
 				56FAFD6F1FCF389700C35BE9 /* Resources */,
 				27721E48D4FB1E84779D2DEA /* [CP] Embed Pods Frameworks */,
-				3BF2C4C657EC2134D0D2D7FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,21 +238,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Face_Music/Pods-Face_Music-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3BF2C4C657EC2134D0D2D7FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Face_Music/Pods-Face_Music-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56FAFD791FCF389700C35BE9 /* ViewController.swift in Sources */,
+				9FF3F7C420836109006A8CE9 /* RecordingSessionView.swift in Sources */,
 				563DE1F61FDA51CF00919E04 /* SynthController.swift in Sources */,
 				9F24040520644CD200DF45CE /* RecordButtonKit.swift in Sources */,
 				9F24040420644CD200DF45CE /* RecordButton.swift in Sources */,

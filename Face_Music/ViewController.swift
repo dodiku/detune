@@ -162,6 +162,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, RPPreviewViewControll
                 print(unwrappedError.localizedDescription)
             } else {
                 DispatchQueue.main.async {
+                    RecordingSessionView.sharedInstance.present()
+                }
+                
+                DispatchQueue.main.async {
                     self.recordButton.isRecording = true
                     self.logoImageView.isHidden = false
                 }
@@ -186,6 +190,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, RPPreviewViewControll
                 }
                 
                 self.soundManger.mainMixer.stop()
+                DispatchQueue.main.async {
+                    RecordingSessionView.sharedInstance.dismiss()
+                }
                 unwrappedPreviewController.previewControllerDelegate = self
                 unwrappedPreviewController.title = "detune"
                 self.present(unwrappedPreviewController, animated: true)
