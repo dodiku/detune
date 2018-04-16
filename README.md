@@ -16,7 +16,7 @@ $ git clone https://github.com/dodiku/detune.git
 ```
 1. Go to the repo directory and install the Pods:
 ```bash
-$ pods install
+$ pod install
 ```
 1. Open the project using the workspace file: ``Face_Music.xcworkspace``.  
 Don't use the regular .xcodeproj file, because the CocoaPods won't be imported.
