@@ -9,19 +9,18 @@ import Foundation
 import AudioKit
 
 class SynthController{
-    
+
+    // Players
     var beatPlayer : AKAudioPlayer
     
-    var rightEye : AKAudioPlayer
+    var rightEyePlayer : AKAudioPlayer
     var leftEye : AKAudioPlayer
     
-    var eyeSide : AKAudioPlayer
-    var smileSound : AKAudioPlayer
+    var eyeSidePlayer : AKAudioPlayer
+    var smileSoundPlayer : AKAudioPlayer
     
-    var baseSynth : AKAudioPlayer
+    var baseSynthPlayer : AKAudioPlayer
     var baseSynthFilter : AKLowPassFilter
-    
-    var beatCallback : AKCallback?
  
     //Drum beeps
     var drumBleep1 : AKOscillator = AKOscillator(waveform: AKTable(.sine))
@@ -37,18 +36,18 @@ class SynthController{
     
     // Piano
     let pianoNote = AKRhodesPiano()
-    var pianoEnv : AKTremolo = AKTremolo()
-    var pianoVerb : AKReverb2 = AKReverb2()
-    var pianoDly : AKDelay = AKDelay()
-    var pianoOut : AKMixer = AKMixer()
+    var pianoEnv = AKTremolo()
+    var pianoVerb = AKReverb2()
+    var pianoDly = AKDelay()
+    var pianoOut = AKMixer()
     let phrygianDispostion: [Int] = [ 60, 62, 64, 65, 67, 69, 70 ]
     
     var currentAmplitude = 0.4
     
     var noteSet = 0
     
-    var mainMixer: AKMixer = AKMixer()
-    var mainWah: AKPitchShifter = AKPitchShifter()
+    var mainMixer = AKMixer()
+    var mainWah = AKPitchShifter()
     
     
     // status change params
@@ -63,55 +62,53 @@ class SynthController{
     
     init(){
         
-        self.beatPlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/beat_05.wav"), looping: false, lazyBuffering: false, completionHandler: nil)
-        self.beatPlayer.endTime = self.beatPlayer.duration - 0.042
+        beatPlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/beat_05.wav"), looping: false, lazyBuffering: false, completionHandler: nil)
+        beatPlayer.endTime = beatPlayer.duration - 0.042
         
-        self.eyeSide = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Zoom2.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
+        eyeSidePlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Zoom2.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
         
-        self.rightEye = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Blip 004.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
+        rightEyePlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Blip 004.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
         
-        self.leftEye = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Effect 002.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
+        leftEye = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Effect 002.wav"), looping: false, lazyBuffering: true, completionHandler: nil)
         
         
-        self.baseSynth = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/base_synth.wav"), looping: true, lazyBuffering: false, completionHandler: nil)
-        self.baseSynthFilter = AKLowPassFilter(self.baseSynth, cutoffFrequency: 6000, resonance: 0)
+        baseSynthPlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/base_synth.wav"), looping: true, lazyBuffering: false, completionHandler: nil)
+        baseSynthFilter = AKLowPassFilter(baseSynthPlayer, cutoffFrequency: 6000, resonance: 0)
         
-        self.smileSound = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Award.wav"), looping: false, lazyBuffering: false, completionHandler: nil)
+        smileSoundPlayer = try! AKAudioPlayer(file: AKAudioFile(readFileName: "Samples/Award.wav"), looping: false, lazyBuffering: false, completionHandler: nil)
       
         
         // INSTRUMENTS !!!!
-        self.pianoEnv = AKTremolo(self.pianoNote)
-        self.pianoVerb = AKReverb2(self.pianoEnv)
-        self.pianoVerb.dryWetMix = 0.6
-        self.pianoDly = AKDelay(self.pianoVerb)
-        self.pianoDly.time = 0.1
-        self.pianoDly.feedback = 0.9
-        self.pianoDly.dryWetMix = 0.7
-        self.pianoOut = AKMixer(self.pianoDly)
+        pianoEnv = AKTremolo(pianoNote)
+        pianoVerb = AKReverb2(pianoEnv)
+        pianoVerb.dryWetMix = 0.6
+        pianoDly = AKDelay(pianoVerb)
+        pianoDly.time = 0.1
+        pianoDly.feedback = 0.9
+        pianoDly.dryWetMix = 0.7
+        pianoOut = AKMixer(pianoDly)
         
         //Drum bleeps and beeps
-        self.drumBank = AKOscillatorBank(waveform: AKTable(.sine),
-                                                                        attackDuration: 0.004,
-                                                                        decayDuration: 0.01,
-                                                                        sustainLevel: 0.6,
-                                                                        releaseDuration: 0.1,
-                                                                        pitchBend: 0,
-                                                                        vibratoDepth: 0,
-                                                                        vibratoRate: 0)
-        self.mainMixer.connect(input: self.pianoOut)
-        self.mainMixer.connect(input: self.drumBank)
-        self.mainMixer.connect(input: self.beatPlayer)
-        self.mainMixer.connect(input: self.eyeSide)
-        self.mainMixer.connect(input: self.smileSound)
-        self.mainMixer.connect(input: self.leftEye)
-        self.mainMixer.connect(input: self.rightEye)
+        drumBank = AKOscillatorBank(waveform: AKTable(.sine),
+                                    attackDuration: 0.004,
+                                    decayDuration: 0.01,
+                                    sustainLevel: 0.6,
+                                    releaseDuration: 0.1,
+                                    pitchBend: 0,
+                                    vibratoDepth: 0,
+                                    vibratoRate: 0)
+        mainMixer.connect(input: pianoOut)
+        mainMixer.connect(input: drumBank)
+        mainMixer.connect(input: beatPlayer)
+        mainMixer.connect(input: eyeSidePlayer)
+        mainMixer.connect(input: smileSoundPlayer)
+        mainMixer.connect(input: leftEye)
+        mainMixer.connect(input: rightEyePlayer)
         
-        self.mainWah = AKPitchShifter(self.mainMixer, shift: 0, windowSize: 1_024, crossfade: 512)
+        mainWah = AKPitchShifter(mainMixer, shift: 0, windowSize: 1_024, crossfade: 512)
         
         
-        
-        AudioKit.output = self.mainWah
-        AudioKit.output = self.baseSynthFilter
+        AudioKit.output = AKMixer(mainWah, baseSynthFilter)
         do {
             try AudioKit.start()
         } catch {
@@ -119,23 +116,21 @@ class SynthController{
         }
         
         // applying oscillators' default amplitude
-        self.pianoOut.volume = self.currentAmplitude * 0.88
-        self.beatPlayer.volume = 0.0
-        self.baseSynth.volume = self.currentAmplitude * 0.8
-        self.eyeSide.volume = self.currentAmplitude * 0.25
-        self.smileSound.volume = self.currentAmplitude * 0.18
-        self.leftEye.volume = self.currentAmplitude * 0.25
-        self.rightEye.volume = self.currentAmplitude * 0.18
+        pianoOut.volume = currentAmplitude * 0.88
+        beatPlayer.volume = 0.0
+        baseSynthPlayer.volume = currentAmplitude * 0.8
+        eyeSidePlayer.volume = currentAmplitude * 0.25
+        smileSoundPlayer.volume = currentAmplitude * 0.18
+        leftEye.volume = currentAmplitude * 0.25
+        rightEyePlayer.volume = currentAmplitude * 0.18
 
+        
         // starting the oscillators
-        self.beatPlayer.play()
-        self.baseSynth.play()
-        self.smileSound.play()
-        self.leftEye.play()
-        self.rightEye.play()
-        
-        mainMixer.start()
-        
+        beatPlayer.play()
+        baseSynthPlayer.play()
+        smileSoundPlayer.play()
+        leftEye.play()
+        rightEyePlayer.play()
     }
 
     
@@ -146,22 +141,14 @@ class SynthController{
     
     func isChangedLower(threshold: Float, value: Float, changed: Bool) -> Bool {
         if (value < threshold) {
-            if (changed == false) {
-                return true
-            } else {
-                return false
-            }
+            return !changed
         }
         return false
     }
     
     func isChangedHigher(threshold: Float, value: Float, changed: Bool) -> Bool {
         if (value > threshold) {
-            if (changed == false) {
-                return true
-            } else {
-                return false
-            }
+            return !changed
         }
         return false
     }

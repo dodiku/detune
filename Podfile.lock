@@ -1,22 +1,25 @@
 PODS:
-  - AudioKit (4.2.3):
-    - AudioKit/UI (= 4.2.3)
-  - AudioKit/UI (4.2.3)
-  - PRTween (0.0.1)
+  - AudioKit (4.7.1):
+    - AudioKit/Core (= 4.7.1)
+    - AudioKit/UI (= 4.7.1)
+  - AudioKit/Core (4.7.1)
+  - AudioKit/UI (4.7.1):
+    - AudioKit/Core
+  - PRTween (0.1.0)
 
 DEPENDENCIES:
-  - AudioKit (~> 4.2.3)
-  - PRTween (~> 0.0.1)
+  - AudioKit
+  - PRTween
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AudioKit
     - PRTween
 
 SPEC CHECKSUMS:
-  AudioKit: 65e0035ce267446932ac733257053ac97dfe395e
-  PRTween: b5f4a594f65f4198eb68e2ef3cf72f3390f037b8
+  AudioKit: fb42378fbe950033462b47efe3643c108698ba03
+  PRTween: 6c58c7e32ebcf31e33e6a6e6bc727ebef3b668ef
 
-PODFILE CHECKSUM: 79bea4f03f3fd14ff187db709dbd7586d132c534
+PODFILE CHECKSUM: 1c6fd19aa8e623061cf5381ecb6325cd9329274a
 
-COCOAPODS: 1.5.0.beta.1
+COCOAPODS: 1.5.3

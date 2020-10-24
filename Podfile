@@ -6,7 +6,7 @@ target 'Face_Music' do
   use_frameworks!
 
   # Pods for Face_Music
-    pod 'AudioKit', '~> 4.2.3'
-    pod 'PRTween', '~> 0.0.1'
+    pod 'AudioKit'
+    pod 'PRTween'
     
 end
